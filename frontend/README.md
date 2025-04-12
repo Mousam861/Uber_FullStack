@@ -1,6 +1,3 @@
-Certainly! Below is a detailed README file specifically for the **frontend** folder of your Uber FullStack project. This README includes sections on how to set up, use, and understand the structure of the frontend code.
-
----
 
 # Frontend
 
@@ -59,8 +56,7 @@ To set up the frontend locally, follow these steps:
 - **Booking a Ride**: Users can enter their pickup and drop-off locations to book a ride.
 - **Profile Management**: Users can manage their profiles and view ride history.
 
-## Folder Structure
-```plaintext
+## Folder Structure```plaintext
 frontend/
 ├── public/
 │   ├── vite.svg
@@ -101,8 +97,7 @@ frontend/
 │   ├── index.jsx
 │   └── vite.config.js
 ├── package.json
-└── package-lock.json
-```
+└── package-lock.json```
 
 ## Components
 The `components` folder contains reusable UI components that are used throughout the application. Here are some key components:
@@ -114,3 +109,64 @@ The `components` folder contains reusable UI components that are used throughout
 - **LocationSearchPanel.jsx**: Allows users to search for pickup and drop-off locations.
 - **RidePopUp.jsx**: Displays a pop-up for ride-related actions.
 - **VehiclePanel.jsx**: Shows vehicle details for the ride.
+- **LookingForDriver.jsx**: Shows a loading screen while searching for available drivers.
+- **WaitingForDriver.jsx**: Displays waiting status after driver is assigned.
+- **ConfirmRidePopUp.jsx**: Pop-up dialog for final ride confirmation.
+
+## Context
+The `context` folder contains React Context providers that manage global state:
+
+- **UserContext.jsx**: Manages user authentication and profile data.
+- **CaptainContext.jsx**: Handles captain (driver) related state.
+- **SocketContext.jsx**: Manages WebSocket connections for real-time features.
+
+## Pages
+The `pages` folder contains the main route components of the application:
+
+- **Start.jsx**: Landing page for the application.
+- **Home.jsx**: Main dashboard for users.
+- **UserLogin.jsx**: User login page.
+- **UserSignup.jsx**: User registration page.
+- **UserLogout.jsx**: Handles user logout.
+- **Riding.jsx**: Main ride tracking page for users.
+- **CaptainHome.jsx**: Dashboard for captains/drivers.
+- **CaptainLogin.jsx**: Captain login page.
+- **CaptainSignup.jsx**: Captain registration page.
+- **CaptainLogout.jsx**: Handles captain logout.
+- **CaptainRiding.jsx**: Ride management page for captains.
+- **CaptainProtectWrapper.jsx**: Route protection wrapper for captain routes.
+
+## Routing
+The application uses React Router for navigation. The main routing structure is defined in `App.jsx`:
+
+- `/`: Landing page
+- `/home`: User dashboard
+- `/login`: User login
+- `/signup`: User registration
+- `/riding`: Active ride page
+- `/captain`: Captain routes
+  - `/captain/home`: Captain dashboard
+  - `/captain/login`: Captain login
+  - `/captain/signup`: Captain registration
+  - `/captain/riding`: Captain's active ride view
+
+Protected routes ensure that only authenticated users can access certain pages.
+
+## Styling
+The application's styling is implemented using:
+
+- **App.css**: Global styles and CSS variables
+- **Tailwind CSS**: Utility-first CSS framework for responsive design
+- **Material-UI Components**: Pre-built React components with Material Design
+- **Custom CSS Modules**: Component-specific styles
+
+Key styling features:
+- Responsive design that works across desktop and mobile devices
+- Consistent color scheme and typography
+- Interactive animations for better user experience
+- Dark mode support
+- Custom styled components for ride-related UI elements
+
+The styling approach combines the flexibility of Tailwind CSS with the structure of Material-UI components, allowing for both rapid development and customized designs.
+
+Developed by Mousam44. Feel free to reach out at mousambarui@gmail.com for any questions or suggestions.
